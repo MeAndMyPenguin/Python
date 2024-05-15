@@ -78,4 +78,5 @@ def main():
     get_Trail(geo)
     print()
 
-main()
+if __name__  == "__main__":
+    main()

@@ -11,7 +11,7 @@ geo = {
     "coilover_back_top": [0.185,0.635,-0.046],
     "coilover_back_bottom": [0.1778,0.0508,0.0],
     "rear_arms_amount": 4,
-    "cg": 0.63,
+    "weight_distribution": 0.63,
     "wheelbase": 2.6
 }
 
@@ -25,11 +25,11 @@ mass = {
 
 def get_zoffset(geo):
 
-    zoffset = geo["wheelbase"] * (0.5 - geo["cg"])
+    zoffset = geo["wheelbase"] * (0.5 - geo["weight_distribution"])
     zoffset = print(f"Z Graphic Offset: {zoffset}")
 
 def get_rear_chassis_weight(mass, geo):                                        #kg * amount of arms in rear
-    weight = (mass["na"] - ((mass["front_hub"] * 2) + (mass["rear_hub"] *2) + (2 * geo["rear_arms_amount"]))) * (1 - geo["cg"])
+    weight = (mass["na"] - ((mass["front_hub"] * 2) + (mass["rear_hub"] *2) + (2 * geo["rear_arms_amount"]))) * (1 - geo["weight_distribution"])
     print(f"Rear chassis weight = {weight}")
 
 def get_distance(geo):

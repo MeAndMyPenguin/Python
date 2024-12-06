@@ -34,7 +34,7 @@ def conversion(width, profile, wheel_size):
     width_meters = width * 0.001
     tyre_meters = profile * 0.01
     wheel_meters = (wheel_size / 2) * 0.0254
-    converted_wheel = ((wheel_size + 1) / 2) * 0.0254
+    converted_wheel = ((wheel_size + 1.57) / 2) * 0.0254
     converted_profile = wheel_meters + width_meters * tyre_meters
     print(f"\nWIDTH={width_meters}\nRADIUS={converted_profile:.4f}\nRIM_RADIUS={converted_wheel}")
     print()
